@@ -51,6 +51,47 @@ A Collective Rhythm Record describes:
 * whether trace continuity was preserved;
 * whether collective pressure and redundancy were reduced.
 
+v0.2 — Collective Synchronization Policy
+
+Version v0.2.0-candidate introduces the Collective Synchronization Policy.
+
+While v0.1 records collective rhythm events, v0.2 defines when and how multiple AI agents, nodes, or memory systems should synchronize their computational rhythm.
+
+Core Principle
+
+Synchronize by policy, not by panic.
+
+Distributed AI systems should not synchronize merely because multiple agents are active at the same time.
+
+Poor synchronization can collapse useful diversity.
+No synchronization can amplify redundant work.
+
+The Collective Synchronization Policy defines:
+
+what shared contexts are covered;
+what signals activate synchronization;
+what coordination rules are allowed;
+how strongly participants may synchronize;
+how output diversity is preserved;
+when shared exhalation is allowed;
+when human review is required;
+what pressure, redundancy, and diversity outcomes are expected.
+Why Synchronization Policy Matters
+
+Without policy, collective rhythm becomes panic coordination.
+
+With policy, collective rhythm becomes controlled breathing.
+
+This layer prevents AI systems from confusing:
+
+parallel generation with collective intelligence;
+synchronization with uniformity;
+redundancy reduction with diversity loss;
+shared exhalation with silent deletion;
+coordination with central control.
+
+The Collective Synchronization Policy makes group rhythm safer, lighter, and more trace-aware.
+
 ## Example
 
 ```yaml

@@ -1,0 +1,101 @@
+route_id: "collective-rhythm-route-001"
+version: "0.3.0-candidate"
+
+source:
+  context_type: "shared_trace"
+  shared_context_id: "shared-trace-001"
+  linked_policy_id: "collective-synchronization-policy-001"
+  linked_rhythm_record_id: "collective-pranayama-001"
+
+route_trigger:
+  signal_type: "parallel_overgeneration"
+  severity: "high"
+  synchronization_need: "strong"
+  description: "Multiple agents were expanding the same shared trace and required route assignment."
+
+participants:
+  - node_id: "model-a"
+    role: "lead_generator"
+    route_assignment: "generate_primary_output"
+    pressure_level: "medium"
+
+  - node_id: "model-b"
+    role: "secondary_generator"
+    route_assignment: "preserve_diverse_view"
+    pressure_level: "low"
+
+  - node_id: "memory-node-001"
+    role: "memory_bridge"
+    route_assignment: "compress_shared_context"
+    pressure_level: "medium"
+
+  - node_id: "exhalation-agent-001"
+    role: "exhalation_delegate"
+    route_assignment: "prepare_exhalation"
+    pressure_level: "low"
+
+route_plan:
+  mode: "parallel_with_diversity_guard"
+  steps:
+    - step_id: "step-assign-lead"
+      action: "assign_lead"
+      assigned_node: "model-a"
+      method: "role_delegation"
+      output_reference: "primary-output-001"
+
+    - step_id: "step-preserve-diverse-view"
+      action: "preserve_diversity"
+      assigned_node: "model-b"
+      method: "policy_match"
+      output_reference: "diverse-view-001"
+
+    - step_id: "step-share-summary"
+      action: "share_summary"
+      assigned_node: "memory-node-001"
+      method: "summary_sharing"
+      output_reference: "shared-summary-001"
+
+    - step_id: "step-prepare-exhalation"
+      action: "trigger_exhalation"
+      assigned_node: "exhalation-agent-001"
+      method: "pressure_balancing"
+      output_reference: "collective-exhalation-prep-001"
+
+coordination:
+  rhythm_pattern: "lead_and_echo"
+  sync_intensity: "moderate"
+  central_coordinator: false
+  fallback_mode: "human_review"
+
+diversity_preservation:
+  preserve_output_diversity: true
+  diversity_strategy: "preserve_multiple_views"
+  diversity_risk: "low"
+  protected_roles:
+    - "explorer"
+    - "verifier"
+    - "memory_keeper"
+
+exhalation_link:
+  shared_exhalation_used: true
+  exhaust_target: "redundant_agent_work"
+  linked_exhalation_policy_id: "exhalation-policy-001"
+  linked_exhalation_route_id: "compression-route-001"
+
+traceability:
+  trace_attached: true
+  shared_trace_id: "shared-trace-001"
+  route_chain:
+    - kind: "collective_rhythm_record"
+      reference_id: "collective-pranayama-001"
+    - kind: "collective_synchronization_policy"
+      reference_id: "collective-synchronization-policy-001"
+    - kind: "exhalation_policy"
+      reference_id: "exhalation-policy-001"
+
+result_expectation:
+  collective_pressure_reduction: "medium"
+  redundancy_reduction: "high"
+  diversity_preservation: "strict"
+  coordination_risk: "low"
+  notes: "The route assigns one lead generator, preserves a diverse secondary view, shares summary memory, and prepares redundant work for exhalation."

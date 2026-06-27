@@ -140,6 +140,47 @@ memory routing with context loss.
 
 The Collective Rhythm Route gives collective intelligence a visible path through the swarm.
 
+v0.4 — Collective Exhalation Bridge
+
+Version v0.4.0-candidate introduces the Collective Exhalation Bridge.
+
+While v0.1 records collective rhythm events, v0.2 defines synchronization policy, and v0.3 defines collective rhythm routes, v0.4 defines how collective computational exhaust is safely handed off to the Exhalation Layer.
+
+Core Principle
+
+Exhale together, but never erase the chorus.
+
+Multiple AI agents may produce redundant outputs, duplicate trace expansions, or collective memory pressure.
+
+However, shared exhalation must not erase useful diversity, collapse minority signals, break trace continuity, or silently discard memory value.
+
+The Collective Exhalation Bridge defines:
+
+which collective route initiated the bridge;
+what type of collective exhaust was detected;
+which participants preserve outputs, traces, memory, or diversity;
+which Exhalation Layer policy and route receive the handoff;
+whether automatic execution is allowed;
+how diversity is protected;
+how memory continuity is preserved;
+how traceability is maintained;
+what pressure, redundancy, diversity, and handoff risks are expected.
+Why Collective Exhalation Matters
+
+Without a bridge, collective exhalation becomes silent group deletion.
+
+With a bridge, collective exhalation becomes trace-aware release.
+
+This layer prevents AI systems from confusing:
+
+redundant agent work with useless work;
+shared exhalation with deletion;
+diversity preservation with inefficiency;
+compression with loss of chorus;
+exhalation delegation with invisible cleanup.
+
+The Collective Exhalation Bridge allows agent groups to reduce redundant work without erasing the structure that made the group intelligent.
+
 ## Example
 
 ```yaml

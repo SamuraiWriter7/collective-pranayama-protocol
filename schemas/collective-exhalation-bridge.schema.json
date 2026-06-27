@@ -1,0 +1,385 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SamuraiWriter7/collective-pranayama-protocol/schemas/collective-exhalation-bridge.schema.json",
+  "title": "Collective Exhalation Bridge",
+  "description": "A bridge record describing how collective computational exhaust is safely handed off from coordinated agent rhythm to the Exhalation Layer while preserving diversity, memory continuity, and traceability.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "bridge_id",
+    "version",
+    "source_route",
+    "collective_exhaust",
+    "participant_mapping",
+    "exhalation_handoff",
+    "diversity_guard",
+    "memory_continuity",
+    "traceability",
+    "result_expectation"
+  ],
+  "properties": {
+    "bridge_id": {
+      "type": "string",
+      "description": "Unique identifier for this collective exhalation bridge.",
+      "pattern": "^collective-exhalation-bridge-[a-zA-Z0-9._-]+$"
+    },
+    "version": {
+      "type": "string",
+      "description": "Protocol version for this bridge.",
+      "const": "0.4.0-candidate"
+    },
+    "source_route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "linked_collective_route_id",
+        "shared_context_id"
+      ],
+      "properties": {
+        "linked_collective_route_id": {
+          "type": "string",
+          "description": "Collective Rhythm Route that initiated this bridge."
+        },
+        "linked_policy_id": {
+          "type": "string",
+          "description": "Collective Synchronization Policy that authorized the route."
+        },
+        "shared_context_id": {
+          "type": "string",
+          "description": "Identifier of the shared context or trace involved.",
+          "minLength": 1
+        },
+        "route_mode": {
+          "type": "string",
+          "description": "Route mode that led to the exhalation bridge.",
+          "enum": [
+            "single_lead_generation",
+            "staggered_generation",
+            "shared_trace_reuse",
+            "parallel_with_diversity_guard",
+            "collective_exhalation_route",
+            "memory_balancing_route",
+            "review_route",
+            "other"
+          ]
+        }
+      }
+    },
+    "collective_exhaust": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exhaust_type",
+        "severity",
+        "shared_exhalation_required"
+      ],
+      "properties": {
+        "exhaust_type": {
+          "type": "string",
+          "description": "Type of collective computational exhaust being handled.",
+          "enum": [
+            "redundant_agent_work",
+            "shared_trace_duplication",
+            "parallel_overgeneration",
+            "collective_compute_pressure",
+            "memory_pressure",
+            "route_conflict",
+            "noisy_collective_context",
+            "other"
+          ]
+        },
+        "severity": {
+          "type": "string",
+          "description": "Severity of the collective exhaust condition.",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        "shared_exhalation_required": {
+          "type": "boolean",
+          "description": "Whether shared exhalation is required across participants."
+        },
+        "description": {
+          "type": "string",
+          "description": "Optional explanation of the collective exhaust condition."
+        }
+      }
+    },
+    "participant_mapping": {
+      "type": "array",
+      "description": "Mapping of participants to exhalation handoff roles.",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "node_id",
+          "role",
+          "handoff_action"
+        ],
+        "properties": {
+          "node_id": {
+            "type": "string",
+            "description": "Identifier of the participating node or agent.",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string",
+            "description": "Role of this participant in the exhalation bridge.",
+            "enum": [
+              "lead_generator",
+              "diversity_preserver",
+              "trace_keeper",
+              "memory_bridge",
+              "exhalation_delegate",
+              "reviewer",
+              "observer",
+              "other"
+            ]
+          },
+          "handoff_action": {
+            "type": "string",
+            "description": "Action assigned to the participant during bridge handoff.",
+            "enum": [
+              "preserve_primary_output",
+              "preserve_diverse_view",
+              "attach_trace",
+              "compress_shared_context",
+              "prepare_exhalation",
+              "review_before_exhalation",
+              "observe_only",
+              "other"
+            ]
+          },
+          "handoff_required": {
+            "type": "boolean",
+            "description": "Whether this participant must complete its handoff action."
+          }
+        }
+      }
+    },
+    "exhalation_handoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_protocol",
+        "linked_exhalation_policy_id",
+        "handoff_mode",
+        "automatic_execution_allowed"
+      ],
+      "properties": {
+        "target_protocol": {
+          "type": "string",
+          "description": "Protocol receiving the exhalation handoff.",
+          "enum": [
+            "exhalation-layer-protocol",
+            "auto-pranayama-protocol",
+            "kazene-memory-breathing-protocol",
+            "structural-rumination-layer",
+            "other"
+          ]
+        },
+        "linked_exhalation_policy_id": {
+          "type": "string",
+          "description": "Exhalation Policy used for shared exhalation."
+        },
+        "linked_exhalation_route_id": {
+          "type": "string",
+          "description": "Compression Route used for shared exhalation."
+        },
+        "handoff_mode": {
+          "type": "string",
+          "description": "Mode used to hand collective exhaust to the exhalation layer.",
+          "enum": [
+            "shared_summary_handoff",
+            "duplicate_trace_handoff",
+            "redundant_work_handoff",
+            "memory_pressure_handoff",
+            "manual_review_handoff",
+            "other"
+          ]
+        },
+        "automatic_execution_allowed": {
+          "type": "boolean",
+          "description": "Whether the receiving layer may execute exhalation automatically."
+        }
+      }
+    },
+    "diversity_guard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "preserve_diversity",
+        "protected_outputs",
+        "diversity_loss_risk"
+      ],
+      "properties": {
+        "preserve_diversity": {
+          "type": "boolean",
+          "description": "Whether useful diversity must be preserved before exhalation."
+        },
+        "protected_outputs": {
+          "type": "array",
+          "description": "Outputs or roles that must not be collapsed during collective exhalation.",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "primary_output",
+              "diverse_view",
+              "minority_signal",
+              "verification_output",
+              "memory_summary",
+              "trace_record",
+              "other"
+            ]
+          }
+        },
+        "diversity_loss_risk": {
+          "type": "string",
+          "description": "Risk that exhalation will reduce useful diversity.",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      }
+    },
+    "memory_continuity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "memory_continuity_required",
+        "memory_action"
+      ],
+      "properties": {
+        "memory_continuity_required": {
+          "type": "boolean",
+          "description": "Whether memory continuity must be preserved before collective exhalation."
+        },
+        "memory_action": {
+          "type": "string",
+          "description": "Memory operation required before or after exhalation.",
+          "enum": [
+            "retain",
+            "compact",
+            "archive",
+            "convert_to_pattern",
+            "defer_review",
+            "none"
+          ]
+        },
+        "linked_memory_bridge_id": {
+          "type": "string",
+          "description": "Optional linked Memory Breathing Bridge."
+        },
+        "memory_reference_id": {
+          "type": "string",
+          "description": "Resulting memory reference, if any."
+        }
+      }
+    },
+    "traceability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "trace_attached",
+        "trace_continuity_preserved",
+        "chain_links"
+      ],
+      "properties": {
+        "trace_attached": {
+          "type": "boolean",
+          "description": "Whether traceability is attached to this bridge."
+        },
+        "shared_trace_id": {
+          "type": "string",
+          "description": "Shared trace identifier attached to this bridge."
+        },
+        "trace_continuity_preserved": {
+          "type": "boolean",
+          "description": "Whether trace continuity is preserved through the exhalation handoff."
+        },
+        "chain_links": {
+          "type": "array",
+          "description": "Artifacts connected by this bridge.",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "reference_id"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "collective_rhythm_record",
+                  "collective_synchronization_policy",
+                  "collective_rhythm_route",
+                  "exhalation_policy",
+                  "exhalation_route",
+                  "memory_breathing_bridge",
+                  "trace_receipt",
+                  "other"
+                ]
+              },
+              "reference_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "result_expectation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "collective_pressure_reduced",
+        "redundancy_reduced",
+        "diversity_preserved",
+        "memory_continuity_preserved",
+        "handoff_risk"
+      ],
+      "properties": {
+        "collective_pressure_reduced": {
+          "type": "boolean",
+          "description": "Whether collective pressure is expected to be reduced."
+        },
+        "redundancy_reduced": {
+          "type": "boolean",
+          "description": "Whether redundant agent work is expected to be reduced."
+        },
+        "diversity_preserved": {
+          "type": "boolean",
+          "description": "Whether useful diversity is expected to be preserved."
+        },
+        "memory_continuity_preserved": {
+          "type": "boolean",
+          "description": "Whether memory continuity is expected to be preserved."
+        },
+        "handoff_risk": {
+          "type": "string",
+          "description": "Risk introduced by the exhalation handoff.",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

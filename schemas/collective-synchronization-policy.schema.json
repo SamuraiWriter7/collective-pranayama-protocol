@@ -1,0 +1,398 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SamuraiWriter7/collective-pranayama-protocol/schemas/collective-synchronization-policy.schema.json",
+  "title": "Collective Synchronization Policy",
+  "description": "A policy defining when and how multiple AI agents, nodes, or memory systems should synchronize computational rhythm without collapsing useful diversity.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "policy_id",
+    "version",
+    "scope",
+    "triggers",
+    "coordination_rules",
+    "diversity_boundary",
+    "exhalation_boundary",
+    "human_review_boundary",
+    "result_expectation"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string",
+      "description": "Unique identifier for this collective synchronization policy.",
+      "pattern": "^collective-synchronization-policy-[a-zA-Z0-9._-]+$"
+    },
+    "version": {
+      "type": "string",
+      "description": "Protocol version for this policy.",
+      "const": "0.2.0-candidate"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "applies_to",
+        "default_mode"
+      ],
+      "properties": {
+        "applies_to": {
+          "type": "array",
+          "description": "Shared contexts or workflows covered by this policy.",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "shared_trace",
+              "shared_prompt",
+              "shared_memory",
+              "shared_route",
+              "shared_kata",
+              "agent_swarm_task",
+              "multi_node_workflow",
+              "other"
+            ]
+          }
+        },
+        "default_mode": {
+          "type": "string",
+          "description": "Default synchronization behavior when no rule matches.",
+          "enum": [
+            "observe",
+            "light_sync",
+            "coordinate",
+            "review",
+            "no_sync"
+          ]
+        },
+        "linked_protocols": {
+          "type": "array",
+          "description": "Related protocols this policy is designed to interoperate with.",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "computational-pranayama-protocol",
+              "auto-pranayama-protocol",
+              "exhalation-layer-protocol",
+              "kazene-memory-breathing-protocol",
+              "ai-search-trace-receipt-standard",
+              "structural-rumination-layer",
+              "other"
+            ]
+          }
+        }
+      }
+    },
+    "triggers": {
+      "type": "array",
+      "description": "Signals that may activate collective synchronization.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "threshold",
+          "priority"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "parallel_overgeneration",
+              "shared_trace_duplication",
+              "collective_compute_pressure",
+              "memory_pressure",
+              "route_conflict",
+              "redundant_agent_work",
+              "exhalation_required",
+              "manual_request",
+              "other"
+            ]
+          },
+          "threshold": {
+            "type": "string",
+            "description": "Human-readable threshold or condition for activating this trigger.",
+            "minLength": 1
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ]
+          }
+        }
+      }
+    },
+    "coordination_rules": {
+      "type": "array",
+      "description": "Rules mapping collective rhythm signals to coordination actions.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "rule_id",
+          "when",
+          "action",
+          "max_sync_intensity",
+          "preserve_diversity"
+        ],
+        "properties": {
+          "rule_id": {
+            "type": "string",
+            "description": "Identifier for this coordination rule.",
+            "pattern": "^rule-[a-zA-Z0-9._-]+$"
+          },
+          "when": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "signal_type",
+              "severity",
+              "synchronization_need"
+            ],
+            "properties": {
+              "signal_type": {
+                "type": "string",
+                "enum": [
+                  "parallel_overgeneration",
+                  "shared_trace_duplication",
+                  "collective_compute_pressure",
+                  "memory_pressure",
+                  "route_conflict",
+                  "redundant_agent_work",
+                  "exhalation_required",
+                  "manual_request",
+                  "other"
+                ]
+              },
+              "severity": {
+                "type": "string",
+                "enum": [
+                  "low",
+                  "medium",
+                  "high",
+                  "critical"
+                ]
+              },
+              "synchronization_need": {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "light",
+                  "moderate",
+                  "strong",
+                  "urgent"
+                ]
+              }
+            }
+          },
+          "action": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "mode",
+              "rhythm_action"
+            ],
+            "properties": {
+              "mode": {
+                "type": "string",
+                "enum": [
+                  "shared_kata_reuse",
+                  "reduce_parallel_generation",
+                  "staggered_generation",
+                  "shared_route_selection",
+                  "collective_exhalation",
+                  "memory_pressure_balancing",
+                  "human_review",
+                  "other"
+                ]
+              },
+              "rhythm_action": {
+                "type": "string",
+                "enum": [
+                  "reduce_parallel_generation",
+                  "reuse_existing_trace",
+                  "share_compressed_summary",
+                  "route_to_single_agent",
+                  "stagger_agent_outputs",
+                  "trigger_collective_exhalation",
+                  "defer_low_priority_agents",
+                  "escalate_to_human_review",
+                  "other"
+                ]
+              }
+            }
+          },
+          "max_sync_intensity": {
+            "type": "string",
+            "description": "Maximum allowed synchronization intensity.",
+            "enum": [
+              "none",
+              "light",
+              "moderate",
+              "strong"
+            ]
+          },
+          "preserve_diversity": {
+            "type": "boolean",
+            "description": "Whether the rule must preserve useful output or reasoning diversity."
+          },
+          "requires_trace_attachment": {
+            "type": "boolean",
+            "description": "Whether this rule requires a trace before execution."
+          }
+        }
+      }
+    },
+    "diversity_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "preserve_output_diversity",
+        "minimum_diversity_policy",
+        "diversity_loss_risk_limit"
+      ],
+      "properties": {
+        "preserve_output_diversity": {
+          "type": "boolean",
+          "description": "Whether useful output diversity must be preserved."
+        },
+        "minimum_diversity_policy": {
+          "type": "string",
+          "description": "Minimum diversity rule that constrains synchronization.",
+          "enum": [
+            "preserve_multiple_views",
+            "preserve_minority_signal",
+            "allow_single_route",
+            "review_before_merge"
+          ]
+        },
+        "diversity_loss_risk_limit": {
+          "type": "string",
+          "description": "Maximum allowed risk of losing useful diversity.",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      }
+    },
+    "exhalation_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "shared_exhalation_allowed",
+        "conditions"
+      ],
+      "properties": {
+        "shared_exhalation_allowed": {
+          "type": "boolean",
+          "description": "Whether the policy allows coordinated exhalation across participants."
+        },
+        "conditions": {
+          "type": "array",
+          "description": "Conditions under which shared exhalation may be used.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "redundant_agent_work",
+              "shared_trace_duplication",
+              "collective_compute_pressure",
+              "memory_pressure",
+              "route_conflict",
+              "human_review_required",
+              "other"
+            ]
+          }
+        },
+        "linked_exhalation_policy_id": {
+          "type": "string",
+          "description": "Optional Exhalation Layer policy used for shared exhalation."
+        }
+      }
+    },
+    "human_review_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required",
+        "conditions"
+      ],
+      "properties": {
+        "required": {
+          "type": "boolean",
+          "description": "Whether human review may be required under this policy."
+        },
+        "conditions": {
+          "type": "array",
+          "description": "Conditions that force human review before synchronization.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "loss_of_diversity",
+              "high_quality_risk",
+              "uncertain_origin",
+              "legal_or_royalty_relevance",
+              "synchronization_conflict",
+              "loss_of_unique_trace",
+              "manual_override",
+              "other"
+            ]
+          }
+        },
+        "review_note": {
+          "type": "string",
+          "description": "Optional note explaining the human review boundary."
+        }
+      }
+    },
+    "result_expectation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "collective_pressure_reduction_target",
+        "redundancy_reduction_target",
+        "diversity_preservation_target"
+      ],
+      "properties": {
+        "collective_pressure_reduction_target": {
+          "type": "string",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "redundancy_reduction_target": {
+          "type": "string",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "diversity_preservation_target": {
+          "type": "string",
+          "enum": [
+            "basic",
+            "standard",
+            "strict"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

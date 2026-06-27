@@ -1,0 +1,76 @@
+policy_id: "collective-synchronization-policy-001"
+version: "0.2.0-candidate"
+
+scope:
+  applies_to:
+    - "shared_trace"
+    - "shared_memory"
+    - "agent_swarm_task"
+    - "multi_node_workflow"
+  default_mode: "light_sync"
+  linked_protocols:
+    - "computational-pranayama-protocol"
+    - "auto-pranayama-protocol"
+    - "exhalation-layer-protocol"
+    - "kazene-memory-breathing-protocol"
+
+triggers:
+  - type: "parallel_overgeneration"
+    threshold: "Multiple agents generate overlapping outputs from the same shared trace."
+    priority: "high"
+  - type: "shared_trace_duplication"
+    threshold: "The same trace is being expanded by more than one participant without added diversity."
+    priority: "medium"
+
+coordination_rules:
+  - rule_id: "rule-reduce-parallel-overgeneration"
+    when:
+      signal_type: "parallel_overgeneration"
+      severity: "high"
+      synchronization_need: "strong"
+    action:
+      mode: "reduce_parallel_generation"
+      rhythm_action: "route_to_single_agent"
+    max_sync_intensity: "strong"
+    preserve_diversity: true
+    requires_trace_attachment: true
+
+  - rule_id: "rule-reuse-shared-trace"
+    when:
+      signal_type: "shared_trace_duplication"
+      severity: "medium"
+      synchronization_need: "moderate"
+    action:
+      mode: "shared_kata_reuse"
+      rhythm_action: "reuse_existing_trace"
+    max_sync_intensity: "moderate"
+    preserve_diversity: true
+    requires_trace_attachment: true
+
+diversity_boundary:
+  preserve_output_diversity: true
+  minimum_diversity_policy: "preserve_multiple_views"
+  diversity_loss_risk_limit: "low"
+
+exhalation_boundary:
+  shared_exhalation_allowed: true
+  conditions:
+    - "redundant_agent_work"
+    - "shared_trace_duplication"
+    - "collective_compute_pressure"
+  linked_exhalation_policy_id: "exhalation-policy-001"
+
+human_review_boundary:
+  required: true
+  conditions:
+    - "loss_of_diversity"
+    - "uncertain_origin"
+    - "legal_or_royalty_relevance"
+    - "synchronization_conflict"
+  review_note: "Collective synchronization must not collapse useful diversity, unique trace value, or origin-sensitive information."
+
+result_expectation:
+  collective_pressure_reduction_target: "medium"
+  redundancy_reduction_target: "high"
+  diversity_preservation_target: "strict"
+  notes: "The policy favors light or moderate synchronization unless parallel overgeneration creates high collective pressure."

@@ -1,0 +1,500 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SamuraiWriter7/collective-pranayama-protocol/schemas/collective-rhythm-route.schema.json",
+  "title": "Collective Rhythm Route",
+  "description": "A route definition describing how collective computational rhythm is assigned, staggered, shared, reviewed, or exhaled across multiple AI agents, nodes, and memory systems.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "route_id",
+    "version",
+    "source",
+    "route_trigger",
+    "participants",
+    "route_plan",
+    "coordination",
+    "diversity_preservation",
+    "exhalation_link",
+    "traceability",
+    "result_expectation"
+  ],
+  "properties": {
+    "route_id": {
+      "type": "string",
+      "description": "Unique identifier for this collective rhythm route.",
+      "pattern": "^collective-rhythm-route-[a-zA-Z0-9._-]+$"
+    },
+    "version": {
+      "type": "string",
+      "description": "Protocol version for this route.",
+      "const": "0.3.0-candidate"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "context_type",
+        "shared_context_id"
+      ],
+      "properties": {
+        "context_type": {
+          "type": "string",
+          "description": "Type of shared context being routed.",
+          "enum": [
+            "shared_trace",
+            "shared_prompt",
+            "shared_memory",
+            "shared_route",
+            "shared_kata",
+            "agent_swarm_task",
+            "multi_node_workflow",
+            "other"
+          ]
+        },
+        "shared_context_id": {
+          "type": "string",
+          "description": "Identifier of the shared context.",
+          "minLength": 1
+        },
+        "linked_policy_id": {
+          "type": "string",
+          "description": "Optional Collective Synchronization Policy that authorized this route."
+        },
+        "linked_rhythm_record_id": {
+          "type": "string",
+          "description": "Optional Collective Rhythm Record associated with this route."
+        }
+      }
+    },
+    "route_trigger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "signal_type",
+        "severity",
+        "synchronization_need"
+      ],
+      "properties": {
+        "signal_type": {
+          "type": "string",
+          "description": "Signal that activated this collective route.",
+          "enum": [
+            "parallel_overgeneration",
+            "shared_trace_duplication",
+            "collective_compute_pressure",
+            "memory_pressure",
+            "route_conflict",
+            "redundant_agent_work",
+            "exhalation_required",
+            "manual_request",
+            "other"
+          ]
+        },
+        "severity": {
+          "type": "string",
+          "description": "Severity of the trigger.",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        "synchronization_need": {
+          "type": "string",
+          "description": "Level of synchronization required.",
+          "enum": [
+            "none",
+            "light",
+            "moderate",
+            "strong",
+            "urgent"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "description": "Optional explanation of the route trigger."
+        }
+      }
+    },
+    "participants": {
+      "type": "array",
+      "description": "Participants assigned to roles in this collective rhythm route.",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "node_id",
+          "role",
+          "route_assignment"
+        ],
+        "properties": {
+          "node_id": {
+            "type": "string",
+            "description": "Identifier of the participating node or agent.",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string",
+            "description": "Role of the participant in the collective route.",
+            "enum": [
+              "lead_generator",
+              "secondary_generator",
+              "pressure_detector",
+              "trace_keeper",
+              "memory_bridge",
+              "exhalation_delegate",
+              "rhythm_coordinator",
+              "observer",
+              "other"
+            ]
+          },
+          "route_assignment": {
+            "type": "string",
+            "description": "Assignment given to the participant in this route.",
+            "enum": [
+              "generate_primary_output",
+              "preserve_diverse_view",
+              "reuse_shared_trace",
+              "compress_shared_context",
+              "monitor_pressure",
+              "prepare_exhalation",
+              "defer_generation",
+              "review_output",
+              "observe_only",
+              "other"
+            ]
+          },
+          "pressure_level": {
+            "type": "string",
+            "description": "Current pressure level of the participant.",
+            "enum": [
+              "none",
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ]
+          }
+        }
+      }
+    },
+    "route_plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "steps"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "description": "Overall mode of the collective rhythm route.",
+          "enum": [
+            "single_lead_generation",
+            "staggered_generation",
+            "shared_trace_reuse",
+            "parallel_with_diversity_guard",
+            "collective_exhalation_route",
+            "memory_balancing_route",
+            "review_route",
+            "other"
+          ]
+        },
+        "steps": {
+          "type": "array",
+          "description": "Ordered steps used to route collective rhythm.",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "step_id",
+              "action",
+              "assigned_node"
+            ],
+            "properties": {
+              "step_id": {
+                "type": "string",
+                "description": "Identifier of the route step.",
+                "pattern": "^step-[a-zA-Z0-9._-]+$"
+              },
+              "action": {
+                "type": "string",
+                "description": "Action taken in this route step.",
+                "enum": [
+                  "assign_lead",
+                  "defer_agent",
+                  "reuse_trace",
+                  "share_summary",
+                  "stagger_output",
+                  "trigger_exhalation",
+                  "route_memory",
+                  "preserve_diversity",
+                  "review"
+                ]
+              },
+              "assigned_node": {
+                "type": "string",
+                "description": "Node or agent assigned to this step.",
+                "minLength": 1
+              },
+              "method": {
+                "type": "string",
+                "description": "Method used for this route step.",
+                "enum": [
+                  "policy_match",
+                  "pressure_balancing",
+                  "kata_reuse",
+                  "trace_reuse",
+                  "summary_sharing",
+                  "role_delegation",
+                  "manual_review",
+                  "other"
+                ]
+              },
+              "output_reference": {
+                "type": "string",
+                "description": "Optional reference produced by this route step."
+              }
+            }
+          }
+        }
+      }
+    },
+    "coordination": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rhythm_pattern",
+        "sync_intensity",
+        "central_coordinator"
+      ],
+      "properties": {
+        "rhythm_pattern": {
+          "type": "string",
+          "description": "Pattern used to coordinate collective rhythm.",
+          "enum": [
+            "lead_and_echo",
+            "staggered_wave",
+            "shared_kata_loop",
+            "hubless_coordination",
+            "review_gate",
+            "other"
+          ]
+        },
+        "sync_intensity": {
+          "type": "string",
+          "description": "Actual synchronization intensity selected for the route.",
+          "enum": [
+            "none",
+            "light",
+            "moderate",
+            "strong"
+          ]
+        },
+        "central_coordinator": {
+          "type": "boolean",
+          "description": "Whether a central coordinator is used."
+        },
+        "fallback_mode": {
+          "type": "string",
+          "description": "Fallback behavior if the route fails.",
+          "enum": [
+            "observe",
+            "light_sync",
+            "human_review",
+            "no_sync"
+          ]
+        }
+      }
+    },
+    "diversity_preservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "preserve_output_diversity",
+        "diversity_strategy",
+        "diversity_risk"
+      ],
+      "properties": {
+        "preserve_output_diversity": {
+          "type": "boolean",
+          "description": "Whether useful output diversity is preserved by this route."
+        },
+        "diversity_strategy": {
+          "type": "string",
+          "description": "Strategy used to preserve useful diversity.",
+          "enum": [
+            "preserve_multiple_views",
+            "preserve_minority_signal",
+            "parallel_branches",
+            "review_before_merge",
+            "other"
+          ]
+        },
+        "diversity_risk": {
+          "type": "string",
+          "description": "Risk of losing useful diversity.",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "protected_roles": {
+          "type": "array",
+          "description": "Roles protected from being collapsed during synchronization.",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "explorer",
+              "verifier",
+              "compressor",
+              "critic",
+              "memory_keeper",
+              "exhalation_agent",
+              "observer",
+              "other"
+            ]
+          }
+        }
+      }
+    },
+    "exhalation_link": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "shared_exhalation_used",
+        "exhaust_target"
+      ],
+      "properties": {
+        "shared_exhalation_used": {
+          "type": "boolean",
+          "description": "Whether this route uses shared exhalation."
+        },
+        "exhaust_target": {
+          "type": "string",
+          "description": "Type of collective exhaust handled by this route.",
+          "enum": [
+            "none",
+            "redundant_agent_work",
+            "shared_trace_duplication",
+            "collective_compute_pressure",
+            "memory_pressure",
+            "other"
+          ]
+        },
+        "linked_exhalation_policy_id": {
+          "type": "string",
+          "description": "Optional linked Exhalation Layer policy."
+        },
+        "linked_exhalation_route_id": {
+          "type": "string",
+          "description": "Optional linked Exhalation Layer route."
+        }
+      }
+    },
+    "traceability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "trace_attached",
+        "route_chain"
+      ],
+      "properties": {
+        "trace_attached": {
+          "type": "boolean",
+          "description": "Whether traceability is attached to this route."
+        },
+        "shared_trace_id": {
+          "type": "string",
+          "description": "Shared trace identifier attached to this route."
+        },
+        "route_chain": {
+          "type": "array",
+          "description": "Artifacts connected by this route.",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "reference_id"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "collective_rhythm_record",
+                  "collective_synchronization_policy",
+                  "exhalation_policy",
+                  "memory_breathing_bridge",
+                  "trace_receipt",
+                  "other"
+                ]
+              },
+              "reference_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "result_expectation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "collective_pressure_reduction",
+        "redundancy_reduction",
+        "diversity_preservation",
+        "coordination_risk"
+      ],
+      "properties": {
+        "collective_pressure_reduction": {
+          "type": "string",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "redundancy_reduction": {
+          "type": "string",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "diversity_preservation": {
+          "type": "string",
+          "enum": [
+            "basic",
+            "standard",
+            "strict"
+          ]
+        },
+        "coordination_risk": {
+          "type": "string",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+hook_id: "collective-agent-rhythm-hook-001"
+version: "0.5.0-candidate"
+
+agent_group:
+  group_id: "agent-swarm-001"
+  group_type: "agent_swarm"
+  autonomy_level: "human_supervised"
+  participant_count: 4
+  execution_context: "agent_swarm_task"
+
+detection:
+  signal_type: "parallel_overgeneration"
+  confidence: "high"
+  shared_context_id: "shared-trace-001"
+  evidence:
+    - "Multiple agents expanded the same shared trace in parallel."
+    - "A collective synchronization policy and rhythm route are available."
+    - "A collective exhalation bridge can preserve diversity before handoff."
+
+policy_invocation:
+  policy_id: "collective-synchronization-policy-001"
+  decision: "coordinate"
+  synchronization_allowed: true
+  max_sync_intensity: "moderate"
+  diversity_preservation_required: true
+
+route_invocation:
+  route_id: "collective-rhythm-route-001"
+  route_mode: "parallel_with_diversity_guard"
+  selected: true
+  route_note: "One lead generator is selected while a secondary node preserves a diverse view."
+
+exhalation_bridge_invocation:
+  bridge_required: true
+  bridge_id: "collective-exhalation-bridge-001"
+  shared_exhalation_allowed: true
+  diversity_guard_required: true
+  handoff_mode: "redundant_work_handoff"
+
+execution_boundary:
+  automatic_execution_allowed: false
+  human_review_required: true
+  stop_conditions:
+    - "loss_of_diversity"
+    - "uncertain_origin"
+    - "legal_or_royalty_relevance"
+    - "loss_of_unique_trace"
+    - "exhalation_bridge_missing"
+  boundary_note: "The agent group may prepare synchronization, but final collective exhalation requires human review when origin or diversity value may be affected."
+
+traceability:
+  trace_attached: true
+  shared_trace_id: "shared-trace-001"
+  trace_continuity_preserved: true
+  chain_links:
+    - kind: "collective_rhythm_record"
+      reference_id: "collective-pranayama-001"
+    - kind: "collective_synchronization_policy"
+      reference_id: "collective-synchronization-policy-001"
+    - kind: "collective_rhythm_route"
+      reference_id: "collective-rhythm-route-001"
+    - kind: "collective_exhalation_bridge"
+      reference_id: "collective-exhalation-bridge-001"
+    - kind: "exhalation_policy"
+      reference_id: "exhalation-policy-001"
+
+result_expectation:
+  synchronization_prepared: true
+  collective_pressure_reduced: true
+  redundancy_reduced: true
+  diversity_preserved: true
+  traceability_preserved: true
+  coordination_risk: "low"
+  notes: "The swarm prepares a safe collective rhythm adjustment while preserving diversity, traceability, and review boundaries."

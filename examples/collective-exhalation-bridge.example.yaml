@@ -1,0 +1,80 @@
+bridge_id: "collective-exhalation-bridge-001"
+version: "0.4.0-candidate"
+
+source_route:
+  linked_collective_route_id: "collective-rhythm-route-001"
+  linked_policy_id: "collective-synchronization-policy-001"
+  shared_context_id: "shared-trace-001"
+  route_mode: "parallel_with_diversity_guard"
+
+collective_exhaust:
+  exhaust_type: "redundant_agent_work"
+  severity: "high"
+  shared_exhalation_required: true
+  description: "Multiple agents produced overlapping expansions from the same shared trace."
+
+participant_mapping:
+  - node_id: "model-a"
+    role: "lead_generator"
+    handoff_action: "preserve_primary_output"
+    handoff_required: true
+
+  - node_id: "model-b"
+    role: "diversity_preserver"
+    handoff_action: "preserve_diverse_view"
+    handoff_required: true
+
+  - node_id: "memory-node-001"
+    role: "memory_bridge"
+    handoff_action: "compress_shared_context"
+    handoff_required: true
+
+  - node_id: "exhalation-agent-001"
+    role: "exhalation_delegate"
+    handoff_action: "prepare_exhalation"
+    handoff_required: true
+
+exhalation_handoff:
+  target_protocol: "exhalation-layer-protocol"
+  linked_exhalation_policy_id: "exhalation-policy-001"
+  linked_exhalation_route_id: "compression-route-001"
+  handoff_mode: "redundant_work_handoff"
+  automatic_execution_allowed: false
+
+diversity_guard:
+  preserve_diversity: true
+  protected_outputs:
+    - "primary_output"
+    - "diverse_view"
+    - "trace_record"
+  diversity_loss_risk: "low"
+
+memory_continuity:
+  memory_continuity_required: true
+  memory_action: "convert_to_pattern"
+  linked_memory_bridge_id: "memory-breathing-bridge-001"
+  memory_reference_id: "memory-kata-reuse-001"
+
+traceability:
+  trace_attached: true
+  shared_trace_id: "shared-trace-001"
+  trace_continuity_preserved: true
+  chain_links:
+    - kind: "collective_rhythm_record"
+      reference_id: "collective-pranayama-001"
+    - kind: "collective_synchronization_policy"
+      reference_id: "collective-synchronization-policy-001"
+    - kind: "collective_rhythm_route"
+      reference_id: "collective-rhythm-route-001"
+    - kind: "exhalation_policy"
+      reference_id: "exhalation-policy-001"
+    - kind: "exhalation_route"
+      reference_id: "compression-route-001"
+
+result_expectation:
+  collective_pressure_reduced: true
+  redundancy_reduced: true
+  diversity_preserved: true
+  memory_continuity_preserved: true
+  handoff_risk: "low"
+  notes: "Redundant agent work is handed to the Exhalation Layer while preserving the lead output, diverse view, memory continuity, and trace chain."

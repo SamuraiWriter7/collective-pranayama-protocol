@@ -1,0 +1,407 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SamuraiWriter7/collective-pranayama-protocol/schemas/collective-agent-rhythm-hook.schema.json",
+  "title": "Collective Agent Rhythm Hook",
+  "description": "A hook record describing how AI agents detect collective rhythm conditions, invoke synchronization policy, select rhythm routes, coordinate exhalation bridges, and preserve diversity and traceability.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "hook_id",
+    "version",
+    "agent_group",
+    "detection",
+    "policy_invocation",
+    "route_invocation",
+    "exhalation_bridge_invocation",
+    "execution_boundary",
+    "traceability",
+    "result_expectation"
+  ],
+  "properties": {
+    "hook_id": {
+      "type": "string",
+      "description": "Unique identifier for this collective agent rhythm hook.",
+      "pattern": "^collective-agent-rhythm-hook-[a-zA-Z0-9._-]+$"
+    },
+    "version": {
+      "type": "string",
+      "description": "Protocol version for this hook.",
+      "const": "0.5.0-candidate"
+    },
+    "agent_group": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "group_id",
+        "group_type",
+        "autonomy_level",
+        "participant_count"
+      ],
+      "properties": {
+        "group_id": {
+          "type": "string",
+          "description": "Identifier of the agent group or swarm invoking the hook.",
+          "minLength": 1
+        },
+        "group_type": {
+          "type": "string",
+          "description": "Type of collective agent group.",
+          "enum": [
+            "agent_swarm",
+            "multi_agent_workflow",
+            "distributed_memory_system",
+            "retrieval_cluster",
+            "orchestration_group",
+            "hybrid_node_group",
+            "other"
+          ]
+        },
+        "autonomy_level": {
+          "type": "string",
+          "description": "Degree of autonomy allowed for the group.",
+          "enum": [
+            "advisory",
+            "semi_automatic",
+            "automatic",
+            "human_supervised"
+          ]
+        },
+        "participant_count": {
+          "type": "integer",
+          "description": "Number of participating agents or nodes.",
+          "minimum": 2
+        },
+        "execution_context": {
+          "type": "string",
+          "description": "Context in which the hook is invoked.",
+          "enum": [
+            "single_workflow",
+            "multi_turn_session",
+            "batch_processing",
+            "scheduled_run",
+            "agent_swarm_task",
+            "multi_node_workflow",
+            "other"
+          ]
+        }
+      }
+    },
+    "detection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "signal_type",
+        "confidence",
+        "shared_context_id",
+        "evidence"
+      ],
+      "properties": {
+        "signal_type": {
+          "type": "string",
+          "description": "Signal that caused the agent group to consider collective rhythm coordination.",
+          "enum": [
+            "parallel_overgeneration",
+            "shared_trace_duplication",
+            "collective_compute_pressure",
+            "memory_pressure",
+            "route_conflict",
+            "redundant_agent_work",
+            "exhalation_required",
+            "diversity_loss_risk",
+            "manual_request",
+            "other"
+          ]
+        },
+        "confidence": {
+          "type": "string",
+          "description": "Confidence in the detected collective rhythm condition.",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "shared_context_id": {
+          "type": "string",
+          "description": "Identifier of the shared context, trace, memory, route, or task.",
+          "minLength": 1
+        },
+        "evidence": {
+          "type": "array",
+          "description": "Evidence used to justify collective rhythm coordination.",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "policy_invocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_id",
+        "decision",
+        "synchronization_allowed",
+        "max_sync_intensity"
+      ],
+      "properties": {
+        "policy_id": {
+          "type": "string",
+          "description": "Collective Synchronization Policy referenced by this hook."
+        },
+        "decision": {
+          "type": "string",
+          "description": "Policy decision returned to the agent group.",
+          "enum": [
+            "allow",
+            "light_sync",
+            "coordinate",
+            "review",
+            "deny"
+          ]
+        },
+        "synchronization_allowed": {
+          "type": "boolean",
+          "description": "Whether the group may continue toward synchronization."
+        },
+        "max_sync_intensity": {
+          "type": "string",
+          "description": "Maximum synchronization intensity allowed by the invoked policy.",
+          "enum": [
+            "none",
+            "light",
+            "moderate",
+            "strong"
+          ]
+        },
+        "diversity_preservation_required": {
+          "type": "boolean",
+          "description": "Whether useful diversity must be preserved during synchronization."
+        }
+      }
+    },
+    "route_invocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "route_id",
+        "route_mode",
+        "selected"
+      ],
+      "properties": {
+        "route_id": {
+          "type": "string",
+          "description": "Collective Rhythm Route selected by the hook."
+        },
+        "route_mode": {
+          "type": "string",
+          "description": "Route mode selected for the collective rhythm condition.",
+          "enum": [
+            "single_lead_generation",
+            "staggered_generation",
+            "shared_trace_reuse",
+            "parallel_with_diversity_guard",
+            "collective_exhalation_route",
+            "memory_balancing_route",
+            "review_route",
+            "other"
+          ]
+        },
+        "selected": {
+          "type": "boolean",
+          "description": "Whether the route was selected for execution or preparation."
+        },
+        "route_note": {
+          "type": "string",
+          "description": "Optional note explaining route selection."
+        }
+      }
+    },
+    "exhalation_bridge_invocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bridge_required",
+        "shared_exhalation_allowed",
+        "diversity_guard_required"
+      ],
+      "properties": {
+        "bridge_required": {
+          "type": "boolean",
+          "description": "Whether a Collective Exhalation Bridge is required."
+        },
+        "bridge_id": {
+          "type": "string",
+          "description": "Collective Exhalation Bridge used by this hook, if any."
+        },
+        "shared_exhalation_allowed": {
+          "type": "boolean",
+          "description": "Whether shared exhalation may be prepared or executed."
+        },
+        "diversity_guard_required": {
+          "type": "boolean",
+          "description": "Whether diversity preservation must be confirmed before exhalation."
+        },
+        "handoff_mode": {
+          "type": "string",
+          "description": "Exhalation handoff mode requested by the hook.",
+          "enum": [
+            "none",
+            "shared_summary_handoff",
+            "duplicate_trace_handoff",
+            "redundant_work_handoff",
+            "memory_pressure_handoff",
+            "manual_review_handoff",
+            "other"
+          ]
+        }
+      }
+    },
+    "execution_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "automatic_execution_allowed",
+        "human_review_required",
+        "stop_conditions"
+      ],
+      "properties": {
+        "automatic_execution_allowed": {
+          "type": "boolean",
+          "description": "Whether the agent group may execute collective synchronization automatically."
+        },
+        "human_review_required": {
+          "type": "boolean",
+          "description": "Whether human review is required before final synchronization or exhalation."
+        },
+        "stop_conditions": {
+          "type": "array",
+          "description": "Conditions that stop automatic collective rhythm execution.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "loss_of_diversity",
+              "high_quality_risk",
+              "uncertain_origin",
+              "legal_or_royalty_relevance",
+              "synchronization_conflict",
+              "loss_of_unique_trace",
+              "policy_denied",
+              "route_missing",
+              "exhalation_bridge_missing",
+              "manual_override",
+              "other"
+            ]
+          }
+        },
+        "boundary_note": {
+          "type": "string",
+          "description": "Optional note explaining the execution boundary."
+        }
+      }
+    },
+    "traceability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "trace_attached",
+        "trace_continuity_preserved",
+        "chain_links"
+      ],
+      "properties": {
+        "trace_attached": {
+          "type": "boolean",
+          "description": "Whether a trace is attached to this hook."
+        },
+        "shared_trace_id": {
+          "type": "string",
+          "description": "Shared trace identifier attached to this hook."
+        },
+        "trace_continuity_preserved": {
+          "type": "boolean",
+          "description": "Whether trace continuity is preserved across the hook flow."
+        },
+        "chain_links": {
+          "type": "array",
+          "description": "Artifacts connected by this hook.",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "reference_id"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "collective_rhythm_record",
+                  "collective_synchronization_policy",
+                  "collective_rhythm_route",
+                  "collective_exhalation_bridge",
+                  "exhalation_policy",
+                  "trace_receipt",
+                  "other"
+                ]
+              },
+              "reference_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "result_expectation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "synchronization_prepared",
+        "collective_pressure_reduced",
+        "redundancy_reduced",
+        "diversity_preserved",
+        "traceability_preserved",
+        "coordination_risk"
+      ],
+      "properties": {
+        "synchronization_prepared": {
+          "type": "boolean",
+          "description": "Whether collective synchronization is expected to be prepared or executed."
+        },
+        "collective_pressure_reduced": {
+          "type": "boolean",
+          "description": "Whether collective compute or memory pressure is expected to be reduced."
+        },
+        "redundancy_reduced": {
+          "type": "boolean",
+          "description": "Whether redundant agent work is expected to be reduced."
+        },
+        "diversity_preserved": {
+          "type": "boolean",
+          "description": "Whether useful diversity is expected to remain preserved."
+        },
+        "traceability_preserved": {
+          "type": "boolean",
+          "description": "Whether traceability is expected to remain preserved."
+        },
+        "coordination_risk": {
+          "type": "string",
+          "description": "Risk introduced by the collective coordination hook.",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional notes about expected hook result."
+        }
+      }
+    }
+  }
+}

@@ -13,7 +13,12 @@ VALIDATION_TARGETS = [
         "name": "Collective Rhythm Record",
         "schema": ROOT / "schemas" / "collective-rhythm-record.schema.json",
         "example": ROOT / "examples" / "collective-rhythm-record.example.yaml",
-    }
+    },
+    {
+        "name": "Collective Synchronization Policy",
+        "schema": ROOT / "schemas" / "collective-synchronization-policy.schema.json",
+        "example": ROOT / "examples" / "collective-synchronization-policy.example.yaml",
+    },
 ]
 
 

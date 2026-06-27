@@ -29,6 +29,11 @@ VALIDATION_TARGETS = [
         "schema": ROOT / "schemas" / "collective-exhalation-bridge.schema.json",
         "example": ROOT / "examples" / "collective-exhalation-bridge.example.yaml",
     },
+    {
+        "name": "Collective Agent Rhythm Hook",
+        "schema": ROOT / "schemas" / "collective-agent-rhythm-hook.schema.json",
+        "example": ROOT / "examples" / "collective-agent-rhythm-hook.example.yaml",
+    },
 ]
 
 

@@ -92,6 +92,54 @@ coordination with central control.
 
 The Collective Synchronization Policy makes group rhythm safer, lighter, and more trace-aware.
 
+v0.3 — Collective Rhythm Route
+
+Version v0.3.0-candidate introduces the Collective Rhythm Route.
+
+While v0.1 records collective rhythm events and v0.2 defines synchronization policy, v0.3 defines how collective computational rhythm is routed across multiple agents, nodes, traces, and memory systems.
+
+Core Principle
+
+Route the rhythm. Do not collapse the chorus.
+
+Distributed AI systems should not simply synchronize all participants into the same behavior.
+
+A healthy collective system may need:
+
+one lead generator;
+one diversity-preserving branch;
+one memory bridge;
+one exhalation delegate;
+one observer;
+one human review path.
+
+The Collective Rhythm Route defines:
+
+what shared context enters the route;
+what signal triggered routing;
+which participants are assigned to which roles;
+which ordered route steps are applied;
+what rhythm pattern is used;
+how diversity is preserved;
+whether shared exhalation is involved;
+how traceability is maintained;
+what pressure, redundancy, diversity, and coordination outcomes are expected.
+Why Routing Matters
+
+Without routing, synchronization becomes collapse.
+
+With routing, synchronization becomes distributed rhythm.
+
+This layer prevents AI systems from confusing:
+
+role assignment with central control;
+synchronization with uniformity;
+parallel generation with useful diversity;
+exhalation delegation with silent deletion;
+memory routing with context loss.
+
+The Collective Rhythm Route gives collective intelligence a visible path through the swarm.
+
 ## Example
 
 ```yaml

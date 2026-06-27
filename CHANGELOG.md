@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file.
 
+[0.3.0-candidate] - 2026-06-28
+Added
+Added Collective Rhythm Route as the third schema of the Collective Pranayama Protocol.
+Added schemas/collective-rhythm-route.schema.json.
+Added examples/collective-rhythm-route.example.yaml.
+Updated scripts/validate_examples.py to validate:
+Collective Rhythm Record
+Collective Synchronization Policy
+Collective Rhythm Route
+Changed
+Extended the protocol from synchronization policy to route-based collective coordination.
+Added support for:
+shared context routing;
+route trigger definition;
+participant role assignment;
+ordered collective route steps;
+rhythm pattern selection;
+diversity preservation strategy;
+shared exhalation linkage;
+route traceability;
+pressure, redundancy, diversity, and coordination risk expectations.
+Design Principle
+
+Established the v0.3 principle:
+
+Route the rhythm. Do not collapse the chorus.
+
+Positioning
+v0.1 records collective rhythm events.
+v0.2 defines when and how collective synchronization should be allowed.
+v0.3 defines how synchronized rhythm is routed across participants.
+
+This makes the protocol ready for multi-agent role assignment, distributed reasoning routes, collective exhalation, and memory-pressure-aware coordination.
+
 [0.2.0-candidate] - 2026-06-28
 Added
 Added Collective Synchronization Policy as the second schema of the Collective Pranayama Protocol.

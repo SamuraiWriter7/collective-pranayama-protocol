@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file.
 
+[0.4.0-candidate] - 2026-06-28
+Added
+Added Collective Exhalation Bridge as the fourth schema of the Collective Pranayama Protocol.
+Added schemas/collective-exhalation-bridge.schema.json.
+Added examples/collective-exhalation-bridge.example.yaml.
+Updated scripts/validate_examples.py to validate:
+Collective Rhythm Record
+Collective Synchronization Policy
+Collective Rhythm Route
+Collective Exhalation Bridge
+Changed
+Extended the protocol from route-based collective coordination to shared exhalation handoff.
+Added support for:
+collective route source mapping;
+collective exhaust classification;
+participant handoff role mapping;
+Exhalation Layer policy and route linkage;
+diversity guards;
+memory continuity requirements;
+traceability chain links;
+pressure, redundancy, diversity, and handoff risk expectations.
+Design Principle
+
+Established the v0.4 principle:
+
+Exhale together, but never erase the chorus.
+
+Positioning
+v0.1 records collective rhythm events.
+v0.2 defines when and how collective synchronization should be allowed.
+v0.3 defines how synchronized rhythm is routed across participants.
+v0.4 defines how collective computational exhaust is safely handed off to the Exhalation Layer.
+
+This makes the protocol ready for shared exhalation, agent-group memory hygiene, distributed trace preservation, and safer reduction of redundant agent work.
+
 [0.3.0-candidate] - 2026-06-28
 Added
 Added Collective Rhythm Route as the third schema of the Collective Pranayama Protocol.

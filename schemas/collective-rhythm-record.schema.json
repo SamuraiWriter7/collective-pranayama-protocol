@@ -1,0 +1,310 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SamuraiWriter7/collective-pranayama-protocol/schemas/collective-rhythm-record.schema.json",
+  "title": "Collective Rhythm Record",
+  "description": "A record describing how multiple AI agents, nodes, or memory systems coordinate computational breathing rhythm, pressure, redundancy, and shared exhalation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "collective_pranayama_id",
+    "version",
+    "participants",
+    "shared_context",
+    "rhythm_signal",
+    "coordination",
+    "trace",
+    "result"
+  ],
+  "properties": {
+    "collective_pranayama_id": {
+      "type": "string",
+      "description": "Unique identifier for this collective pranayama event.",
+      "pattern": "^collective-pranayama-[a-zA-Z0-9._-]+$"
+    },
+    "version": {
+      "type": "string",
+      "description": "Protocol version for this record.",
+      "const": "0.1.0-candidate"
+    },
+    "participants": {
+      "type": "array",
+      "description": "AI agents, nodes, models, or memory systems participating in the collective rhythm.",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "node_id",
+          "role",
+          "compute_state",
+          "pressure_level"
+        ],
+        "properties": {
+          "node_id": {
+            "type": "string",
+            "description": "Identifier of the participating node or agent.",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string",
+            "description": "Role of this participant in the collective breathing event.",
+            "enum": [
+              "overcompute_source",
+              "pressure_detector",
+              "route_selector",
+              "memory_bridge",
+              "exhalation_agent",
+              "rhythm_coordinator",
+              "observer",
+              "other"
+            ]
+          },
+          "compute_state": {
+            "type": "string",
+            "description": "Current computational state of the participant.",
+            "enum": [
+              "idle",
+              "normal",
+              "overcomputing",
+              "under_pressure",
+              "compressing",
+              "exhaling",
+              "synchronizing",
+              "recovering"
+            ]
+          },
+          "pressure_level": {
+            "type": "string",
+            "description": "Current compute or memory pressure level.",
+            "enum": [
+              "none",
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ]
+          }
+        }
+      }
+    },
+    "shared_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "context_type",
+        "shared_trace_id",
+        "redundancy_detected"
+      ],
+      "properties": {
+        "context_type": {
+          "type": "string",
+          "description": "Type of shared context involved in the collective rhythm.",
+          "enum": [
+            "shared_trace",
+            "shared_prompt",
+            "shared_memory",
+            "shared_route",
+            "shared_kata",
+            "agent_swarm_task",
+            "multi_node_workflow",
+            "other"
+          ]
+        },
+        "shared_trace_id": {
+          "type": "string",
+          "description": "Identifier for the shared trace or shared context record.",
+          "minLength": 1
+        },
+        "redundancy_detected": {
+          "type": "boolean",
+          "description": "Whether redundancy was detected across participants."
+        },
+        "context_note": {
+          "type": "string",
+          "description": "Optional note describing the shared context."
+        }
+      }
+    },
+    "rhythm_signal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "signal_type",
+        "severity",
+        "synchronization_need"
+      ],
+      "properties": {
+        "signal_type": {
+          "type": "string",
+          "description": "Signal that triggered collective breathing coordination.",
+          "enum": [
+            "parallel_overgeneration",
+            "shared_trace_duplication",
+            "collective_compute_pressure",
+            "memory_pressure",
+            "route_conflict",
+            "redundant_agent_work",
+            "exhalation_required",
+            "manual_request",
+            "other"
+          ]
+        },
+        "severity": {
+          "type": "string",
+          "description": "Severity of the rhythm signal.",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        "synchronization_need": {
+          "type": "string",
+          "description": "Level of collective synchronization needed.",
+          "enum": [
+            "none",
+            "light",
+            "moderate",
+            "strong",
+            "urgent"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "description": "Optional explanation of the rhythm signal."
+        }
+      }
+    },
+    "coordination": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "rhythm_action",
+        "shared_kata_reuse",
+        "exhalation_coordination"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "description": "Coordination mode used for collective breathing.",
+          "enum": [
+            "shared_kata_reuse",
+            "reduce_parallel_generation",
+            "staggered_generation",
+            "shared_route_selection",
+            "collective_exhalation",
+            "memory_pressure_balancing",
+            "human_review",
+            "other"
+          ]
+        },
+        "rhythm_action": {
+          "type": "string",
+          "description": "Action taken to adjust collective rhythm.",
+          "enum": [
+            "reduce_parallel_generation",
+            "reuse_existing_trace",
+            "share_compressed_summary",
+            "route_to_single_agent",
+            "stagger_agent_outputs",
+            "trigger_collective_exhalation",
+            "defer_low_priority_agents",
+            "escalate_to_human_review",
+            "other"
+          ]
+        },
+        "shared_kata_reuse": {
+          "type": "boolean",
+          "description": "Whether a shared kata or reusable pattern was used to reduce duplicated computation."
+        },
+        "exhalation_coordination": {
+          "type": "boolean",
+          "description": "Whether the participants coordinated with an exhalation layer or shared exhaust mechanism."
+        },
+        "linked_protocols": {
+          "type": "array",
+          "description": "Related protocols used in this coordination.",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "computational-pranayama-protocol",
+              "auto-pranayama-protocol",
+              "exhalation-layer-protocol",
+              "kazene-memory-breathing-protocol",
+              "ai-search-trace-receipt-standard",
+              "structural-rumination-layer",
+              "other"
+            ]
+          }
+        }
+      }
+    },
+    "trace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "attached",
+        "trace_continuity_preserved"
+      ],
+      "properties": {
+        "attached": {
+          "type": "boolean",
+          "description": "Whether a trace is attached to this collective rhythm event."
+        },
+        "trace_id": {
+          "type": "string",
+          "description": "Identifier of the attached trace."
+        },
+        "trace_continuity_preserved": {
+          "type": "boolean",
+          "description": "Whether trace continuity is preserved across participants."
+        },
+        "trace_note": {
+          "type": "string",
+          "description": "Optional note about trace continuity."
+        }
+      }
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "collective_pressure_reduced",
+        "redundancy_reduced",
+        "output_diversity_preserved",
+        "quality_risk"
+      ],
+      "properties": {
+        "collective_pressure_reduced": {
+          "type": "boolean",
+          "description": "Whether collective compute or memory pressure was reduced."
+        },
+        "redundancy_reduced": {
+          "type": "boolean",
+          "description": "Whether duplicated work or redundant output was reduced."
+        },
+        "output_diversity_preserved": {
+          "type": "boolean",
+          "description": "Whether useful diversity of outputs was preserved."
+        },
+        "quality_risk": {
+          "type": "string",
+          "description": "Risk that coordination reduced useful quality or diversity.",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional notes about the collective rhythm result."
+        }
+      }
+    }
+  }
+}
